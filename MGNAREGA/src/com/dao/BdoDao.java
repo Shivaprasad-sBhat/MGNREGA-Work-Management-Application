@@ -20,9 +20,9 @@ public interface BdoDao {
 	
 	public int createGPM(GPM gpm) throws GpmException;
 	
-	public List<GPM> displayGPM();
+	public List<GPM> displayGPM() throws GpmException;
 	
-	public String allocateProjectTOGPM(Project projectid,GPM gpmid);
+	public String allocateProjectTOGPM(int projectid, int gpmid) throws ProjectException;
 	
 	public List<Employee> displayProjectEmployeDetails();
 	

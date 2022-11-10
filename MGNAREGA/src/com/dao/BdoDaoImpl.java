@@ -19,17 +19,30 @@ public class BdoDaoImpl implements BdoDao {
 
 	BDO bdo =new BDO();
 	
-//	public static void main(String[] args) {
-//		BdoDao bd=new BdoDaoImpl();
-//		try {
-//			String s=bd.loginBDO(new BDO(0,null,"ram@123","1234",null,0));
-//			System.out.println(s);
-//		} catch (BdoException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
-//	
+	public static void main(String[] args) throws Exception {
+		BdoDao bd=new BdoDaoImpl();
+	
+			String s=bd.loginBDO(new BDO(0,null,"ram@123","1234",null,0));
+			System.out.println(s);
+			
+//			int x=	bd.createGPM(new GPM(0,"Guru","guru@123","1234","ylp",57000));
+//			System.out.println(x);
+			
+			Project p=new Project();
+			p.setP_name("irrigation");
+			p.setProj_amount(300000);
+			p.setTotal_workers(50);
+			int j=	bd.createProject(p);
+			System.out.println(j);
+			
+			String d=bd.allocateProjectTOGPM(2, 2);
+			
+			System.out.println(d);
+			
+	
+		
+	}
+	
 	
 	
 	// BDO Login
@@ -81,7 +94,7 @@ public class BdoDaoImpl implements BdoDao {
 		
 	try(Connection conn = DBUtil.provideConection()){
 		
-		PreparedStatement ps =	conn.prepareStatement("insert into project(p_name,proj_amount,total_work_days) values('road repair',2000000,62);");
+		PreparedStatement ps =	conn.prepareStatement("insert into project(p_name,proj_amount,total_work_days) values(?,?,?);");
 		ps.setString(1, project.getP_name());
 		ps.setInt(2, project.getProj_amount());
 		ps.setInt(3, project.getTotal_workers());
@@ -175,37 +188,68 @@ public class BdoDaoImpl implements BdoDao {
 	
 	//display GPM
 	@Override
-	public List<GPM> displayGPM() {
+	public List<GPM> displayGPM() throws GpmException {
 		
 		List<GPM> li = null;
 		
 		
 		
 	try(Connection conn = DBUtil.provideConection()){
-		PreparedStatement ps =	conn.prepareStatement("");
+		PreparedStatement ps =	conn.prepareStatement("select * from gpm");
 		
+		 ResultSet rs = ps.executeQuery();
 		
+		 if(rs.next())
+		 {
+		 while(rs.next()) {
+			 
+			 int id = rs.getInt("gpm_id");
+			 String name = rs.getString("gpm_name");
+			 String email = rs.getString("email");
+			 String password = rs.getString("password");
+			 String address = rs.getString("address");
+			 int pincode = rs.getInt("pincode");
+			 
+			 GPM gpm = new GPM(id, name, email, password, address, pincode);
+			 
+			 li.add(gpm);
+			 
+		  }
+		 }
+		 else 
+			 throw new GpmException("GPM not found..!");
 		
 	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+		 throw new GpmException(e.getMessage());
 	}
 		
 		
 		return li;
 	}
 
+	//Allocating project to GPM
 	@Override
-	public String allocateProjectTOGPM(Project projectid, GPM gpmid) {
+	public String allocateProjectTOGPM(int projectid, int gpmid) throws ProjectException {
 		
 		String message="Project not allocated..";
 		
 		
 		
 	try(Connection conn=DBUtil.provideConection()){
-		PreparedStatement ps=	conn.prepareStatement("");
 		
+		PreparedStatement ps = conn.prepareStatement("insert into project_allotment(project_id,bdo_id,gpm_id) values(?,?,?);");
 		
+		ps.setInt(1, projectid);
+		ps.setInt(2, bdo.getB_id());
+		ps.setInt(3, gpmid);
+		
+		int n = ps.executeUpdate();
+		
+		if(n!=0) {
+			message="Project  allocated succesfully..";
+		}
+		else
+			throw new ProjectException("Project allocation failed");
 		
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
@@ -239,3 +283,5 @@ public class BdoDaoImpl implements BdoDao {
 	}
 
 }
+
+//select  p.project_id,pj.p_name,b.bdo_id,b.bdo_name,g.gpm_id,g.gpm_name,g.address,g.pincode from project_allotment p inner join gpm g on g.gpm_id=p.gpm_id inner join bdo b on b.bdo_id=p.bdo_id inner join project pj on p.project_id=pj.project_id;
