@@ -5,22 +5,22 @@ public class Employee {
 	private int emp_id;               //pk
 	private String name;
 	private String email;
-	private String project_id;        //fk  
-	private int working_days;
+	private String password;
 	private int salary;
+	private int total_working_days;
 	
 	public Employee() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(int emp_id, String name, String email, String project_id, int working_days, int salary) {
+	public Employee(int emp_id, String name, String email, String password, int salary, int total_working_days) {
 		super();
 		this.emp_id = emp_id;
 		this.name = name;
 		this.email = email;
-		this.project_id = project_id;
-		this.working_days = working_days;
+		this.password = password;
 		this.salary = salary;
+		this.total_working_days = total_working_days;
 	}
 
 	public int getEmp_id() {
@@ -47,20 +47,12 @@ public class Employee {
 		this.email = email;
 	}
 
-	public String getProject_id() {
-		return project_id;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setProject_id(String project_id) {
-		this.project_id = project_id;
-	}
-
-	public int getWorking_days() {
-		return working_days;
-	}
-
-	public void setWorking_days(int working_days) {
-		this.working_days = working_days;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public int getSalary() {
@@ -71,11 +63,20 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	public int getTotal_working_days() {
+		return total_working_days;
+	}
+
+	public void setTotal_working_days(int total_working_days) {
+		this.total_working_days = total_working_days;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [emp_id=" + emp_id + ", name=" + name + ", email=" + email + ", project_id=" + project_id
-				+ ", working_days=" + working_days + ", salary=" + salary + "]";
+		return "Employee [emp_id=" + emp_id + ", name=" + name + ", email=" + email + ", password=" + password
+				+ ", salary=" + salary + ", total_working_days=" + total_working_days + "]";
 	}
+
 	
 	
 }

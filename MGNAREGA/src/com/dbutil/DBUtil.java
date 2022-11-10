@@ -24,7 +24,7 @@ public class DBUtil {
 		
 		
 		try {
-			String url="jdbc:mysql://localhost:3306/mgnareaga";
+			String url="jdbc:mysql://localhost:3306/mgnarega";
 			
 		conn = DriverManager.getConnection(url,"root","1234");
 		

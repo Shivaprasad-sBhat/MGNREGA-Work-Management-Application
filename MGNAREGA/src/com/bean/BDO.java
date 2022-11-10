@@ -5,24 +5,24 @@ public class BDO {
 	private int b_id;                   //pk
 	private String b_name;
 	private String email;
-	private String State;
-	private String District;
-	private String pincode;
 	private String password;
+	private String address;
+	private int pincode;
+	
 	
 	public BDO() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public BDO(int b_id, String b_name, String email, String state, String district, String pincode, String password) {
+	public BDO(int b_id, String b_name, String email, String password, String address, int pincode) {
 		super();
 		this.b_id = b_id;
 		this.b_name = b_name;
 		this.email = email;
-		State = state;
-		District = district;
-		this.pincode = pincode;
 		this.password = password;
+		this.address = address;
+		this.pincode = pincode;
+		
 	}
 
 	public int getB_id() {
@@ -49,27 +49,19 @@ public class BDO {
 		this.email = email;
 	}
 
-	public String getState() {
-		return State;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setState(String state) {
-		State = state;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getDistrict() {
-		return District;
-	}
-
-	public void setDistrict(String district) {
-		District = district;
-	}
-
-	public String getPincode() {
+	public int getPincode() {
 		return pincode;
 	}
 
-	public void setPincode(String pincode) {
+	public void setPincode(int pincode) {
 		this.pincode = pincode;
 	}
 
@@ -83,9 +75,10 @@ public class BDO {
 
 	@Override
 	public String toString() {
-		return "BDO [b_id=" + b_id + ", b_name=" + b_name + ", email=" + email + ", State=" + State + ", District="
-				+ District + ", pincode=" + pincode + ", password=" + password + "]";
+		return "BDO [b_id=" + b_id + ", b_name=" + b_name + ", email=" + email + ", address=" + address + ", pincode="
+				+ pincode + ", password=" + password + "]";
 	}
 	
 	
+
 }

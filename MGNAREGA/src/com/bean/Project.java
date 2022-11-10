@@ -4,18 +4,18 @@ public class Project {
 	
 	private int project_id;				//pk
 	private String p_name;
-	private int cost_estimate;
+	private int proj_amount;
 	private int total_workers;
 	
 public Project() {
 	// TODO Auto-generated constructor stub
 }
 
-public Project(int project_id, String p_name, int cost_estimate, int total_workers) {
+public Project(int project_id, String p_name, int proj_amount, int total_workers) {
 	super();
 	this.project_id = project_id;
 	this.p_name = p_name;
-	this.cost_estimate = cost_estimate;
+	this.proj_amount = proj_amount;
 	this.total_workers = total_workers;
 }
 
@@ -35,12 +35,12 @@ public void setP_name(String p_name) {
 	this.p_name = p_name;
 }
 
-public int getCost_estimate() {
-	return cost_estimate;
+public int getProj_amount() {
+	return proj_amount;
 }
 
-public void setCost_estimate(int cost_estimate) {
-	this.cost_estimate = cost_estimate;
+public void setProj_amount(int proj_amount) {
+	this.proj_amount = proj_amount;
 }
 
 public int getTotal_workers() {
@@ -53,7 +53,7 @@ public void setTotal_workers(int total_workers) {
 
 @Override
 public String toString() {
-	return "Project [project_id=" + project_id + ", p_name=" + p_name + ", cost_estimate=" + cost_estimate
+	return "Project [project_id=" + project_id + ", project_name=" + p_name + ", project_amount=" + proj_amount
 			+ ", total_workers=" + total_workers + "]";
 }
 
