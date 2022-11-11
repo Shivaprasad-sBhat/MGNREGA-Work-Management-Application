@@ -4,9 +4,11 @@ import java.util.List;
 
 import com.bean.BDO;
 import com.bean.Employee;
+import com.bean.EmployeeDto;
 import com.bean.GPM;
 import com.bean.Project;
 import com.exception.BdoException;
+import com.exception.EmployeeException;
 import com.exception.GpmException;
 import com.exception.ProjectException;
 
@@ -22,9 +24,9 @@ public interface BdoDao {
 	
 	public List<GPM> displayGPM() throws GpmException;
 	
-	public String allocateProjectTOGPM(int projectid, int gpmid) throws ProjectException;
+	public String allocateProjectTOGPM(Project projectid, GPM gpmid) throws ProjectException;
 	
-	public List<Employee> displayProjectEmployeDetails();
+	public List<EmployeeDto> displayProjectEmployeDetails() throws EmployeeException;
 	
 	
 	
