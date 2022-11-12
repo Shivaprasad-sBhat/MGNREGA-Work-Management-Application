@@ -12,9 +12,9 @@ import com.exception.ProjectException;
 
 public interface GpmDao {
 
-	 public String loginGPM(GPM gpm) throws GpmException;
+	 public GPM loginGPM(GPM gpm) throws GpmException;
 	 
-	 public String createEmploye(Employee employee) throws EmployeeException;
+	 public int createEmploye(Employee employee) throws EmployeeException;
 	 
 	 public String assignProjectToEmployee(Project project_id,Employee emp) throws EmployeeException, ProjectException;
 	 
@@ -27,9 +27,3 @@ public interface GpmDao {
 	 
 }
 
-
-//Login into their Account.
-//2. Create Employee.
-//3. View the Details of Employee.
-//4. Assign Employee to a Project.
-//5. View total number of days Employee worked in a project and also their wages.

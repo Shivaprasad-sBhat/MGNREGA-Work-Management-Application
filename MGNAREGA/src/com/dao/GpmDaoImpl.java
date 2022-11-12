@@ -22,7 +22,7 @@ public class GpmDaoImpl implements GpmDao {
 	
 	
 	@Override
-	public String loginGPM(GPM gpm1) throws GpmException {
+	public GPM loginGPM(GPM gpm1) throws GpmException {
 
 		String message= "Login failed";
 		
@@ -57,15 +57,15 @@ public class GpmDaoImpl implements GpmDao {
 		throw new GpmException(e.getMessage());
 	}
 	
-    return message;
+    return gpm;
 	}
 	
 	
 
 	@Override
-	public String createEmploye(Employee emp) throws EmployeeException {
+	public int createEmploye(Employee emp) throws EmployeeException {
 
-		String message= "Employee not created..!";
+		int n=0;
 				
 	try(Connection conn = DBUtil.provideConection()) {
 		
@@ -75,12 +75,10 @@ public class GpmDaoImpl implements GpmDao {
 		ps.setString(3, emp.getPassword());
 	
 		
-		int n = ps.executeUpdate();
+		 n = ps.executeUpdate();
 		
-		if(n>0) {
-			message="Employee is created..";
-		}
-		else {
+		if(n<0) {
+		
 			throw new EmployeeException("Employee not created..!");
 		}
 	} 
@@ -88,7 +86,7 @@ public class GpmDaoImpl implements GpmDao {
 		throw new EmployeeException(e.getMessage());
 	}
 	
-		return message;
+		return n;
 	}
 
 	@Override

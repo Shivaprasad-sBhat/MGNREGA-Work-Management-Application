@@ -14,7 +14,7 @@ import com.exception.ProjectException;
 
 public interface BdoDao {
 
-	public String loginBDO(BDO bdo)  throws BdoException;
+	public BDO loginBDO(BDO bdo)  throws BdoException;
 	
 	public int createProject(Project project)  throws ProjectException;
 	

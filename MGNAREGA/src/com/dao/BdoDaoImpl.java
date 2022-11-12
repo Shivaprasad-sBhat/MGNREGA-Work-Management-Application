@@ -22,38 +22,10 @@ public class BdoDaoImpl implements BdoDao {
 
 	BDO bdo =new BDO();
 	
-//	public static void main(String[] args) throws Exception {
-//		BdoDaoImpl bd=new BdoDaoImpl();
-//	
-//			String s=bd.loginBDO(new BDO(0,null,"ram@123","1234",null,0));
-//			System.out.println(s);
-//			
-////			int x=	bd.createGPM(new GPM(0,"Guru","guru@123","1234","ylp",57000));
-////			System.out.println(x);
-//			System.out.println(bd.bdo);
-//			Project p=new Project();
-//			p.setP_name("irrigation");
-//			p.setProj_amount(300000);
-//			p.setTotal_workers(50);
-//			int j=	bd.createProject(p);
-//			System.out.println(j);
-//			
-//			String d=bd.allocateProjectTOGPM(2, 2);
-//			
-//			System.out.println(d);
-//			
-//	
-//		
-//	}
-	
-	
-	
+
 	// BDO Login
 	@Override
-	public String loginBDO(BDO b) throws BdoException {
-		
-		String message = "Login failed..";
-		
+	public BDO loginBDO(BDO b) throws BdoException {
 		
 		
 	try(Connection conn = DBUtil.provideConection()){
@@ -74,17 +46,17 @@ public class BdoDaoImpl implements BdoDao {
 		int pincode = rs.getInt("pincode");
 		
 		bdo = new BDO(id,name,email,password,address,pincode);
-		message = "Wellcome BDO: "+name;
+		
 	}
 	else
-		throw new BdoException("Provide correct information");
+		throw new BdoException("Provide correct information...");
 	} 
 	catch (SQLException e) {
 		
 		throw new BdoException(e.getMessage());
 	}
 		
-		return message;
+		return bdo;
 	}
 	
 	
@@ -123,7 +95,7 @@ public class BdoDaoImpl implements BdoDao {
 	@Override
 	public List<Project> displayProject() throws ProjectException {
 		
-		List<Project> li=null;
+		List<Project> li=new ArrayList();
 		
 		
 	try(Connection conn = DBUtil.provideConection()){
@@ -193,7 +165,7 @@ public class BdoDaoImpl implements BdoDao {
 	@Override
 	public List<GPM> displayGPM() throws GpmException {
 		
-		List<GPM> li = null;
+		List<GPM> li = new ArrayList();
 		
 		
 		
@@ -253,7 +225,7 @@ public class BdoDaoImpl implements BdoDao {
 			message="Project  allocated succesfully..";
 		}
 		else
-			throw new ProjectException("Project allocation failed");
+			throw new ProjectException("Project allocation failed..");
 		
 	} catch (SQLException e) {
 		throw new ProjectException(e.getMessage());
@@ -302,5 +274,3 @@ public class BdoDaoImpl implements BdoDao {
 			return li;
 		}
 }
-
-//select  p.project_id,pj.p_name,b.bdo_id,b.bdo_name,g.gpm_id,g.gpm_name,g.address,g.pincode from project_allotment p inner join gpm g on g.gpm_id=p.gpm_id inner join bdo b on b.bdo_id=p.bdo_id inner join project pj on p.project_id=pj.project_id;
