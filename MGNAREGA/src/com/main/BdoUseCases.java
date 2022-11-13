@@ -1,4 +1,4 @@
-package main;
+package com.main;
 
 import java.util.InputMismatchException;
 import java.util.List;

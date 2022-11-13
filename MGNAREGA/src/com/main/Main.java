@@ -1,4 +1,4 @@
-package main;
+package com.main;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -25,7 +25,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		
-		System.out.println("1. Login BDO"+"\n"+"2. Login GPM"+"\n"+"3. Login Employee"+"\n"+"4. Exit");
+		System.out.println("1. Login BDO"+"\n"+"2. Login GPM"+"\n"+"3. Exit"); 
 		System.out.println("Enter your choise :");
 		
 		boolean flag=true;
@@ -47,11 +47,12 @@ public class Main {
 			break;
 			
 
-		case 3:
-			usecase();
-			break;
+//		case 3:
+//			//+"3. Login Employee"+"\n"
+//			usecase();
+//			break;
 			
-		case 4:
+		case 3:
 			return;
 		
 		default:
