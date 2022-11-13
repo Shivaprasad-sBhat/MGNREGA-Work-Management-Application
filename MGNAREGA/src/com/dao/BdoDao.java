@@ -35,11 +35,3 @@ public interface BdoDao {
 
 
 
-
-//1. Login into their account.
-//2. Create a project.
-//3. View List Of Project.
-//4. Create new Gram Panchayat Member(GPM).
-//5. View all the GPM.
-//6. Allocate  Project to GPM
-//7. See List of Employee working on that Project and their wages.

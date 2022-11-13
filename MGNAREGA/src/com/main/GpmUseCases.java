@@ -54,7 +54,7 @@ public class GpmUseCases {
 					gpm = gpmi.loginGPM(gpm);
 						if(gpm!=null) {
 						
-						System.out.println(green+"Wellcome BDO: "+gpm.getGpm_name()+reset+"\n");
+						System.out.println(green+"Wellcome GPM: "+gpm.getGpm_name()+reset+"\n");
 						gpmUseCases();
 						return;
 					}
