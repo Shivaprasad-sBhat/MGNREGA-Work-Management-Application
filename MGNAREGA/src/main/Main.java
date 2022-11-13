@@ -9,8 +9,8 @@ public class Main {
 	public static void main(String[] args) {
 	
 		System.out.println("Wellcome TO MGNAREGA management system");
+		System.out.println("---------------------------------------");
 		System.out.println();
-		
 		Main m=new Main();
 		m.usecase();
 		
@@ -23,7 +23,7 @@ public class Main {
 	public void usecase() {
 		
 		Scanner sc = new Scanner(System.in);
-		BdoUseCases bdouc = new BdoUseCases();
+		
 		
 		System.out.println("1. Login BDO"+"\n"+"2. Login GPM"+"\n"+"3. Login Employee"+"\n"+"4. Exit");
 		System.out.println("Enter your choise :");
@@ -34,12 +34,15 @@ public class Main {
 		switch(n) {
 		
 		case 1:
+			BdoUseCases bdouc = new BdoUseCases();
 			bdouc.loginBDO();
 			usecase();
 			break;
 			
 
 		case 2:
+			GpmUseCases gpmu = new GpmUseCases();
+			gpmu.gpmLogin();
 			usecase();
 			break;
 			

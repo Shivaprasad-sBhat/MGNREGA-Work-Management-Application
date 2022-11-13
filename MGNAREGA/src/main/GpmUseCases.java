@@ -1,5 +1,6 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -8,6 +9,7 @@ import com.bean.BDO;
 import com.bean.Employee;
 import com.bean.EmployeeDto;
 import com.bean.GPM;
+import com.bean.GpmDto;
 import com.bean.Project;
 import com.dao.EmployeeDaoImpl;
 import com.dao.GpmDaoImpl;
@@ -36,7 +38,7 @@ public class GpmUseCases {
 	  
 	  public void gpmLogin() {
 		
-				System.out.println("Enter email address:");
+				System.out.println("Enter GPM email address:");
 				String email = sc.nextLine();
 				
 				System.out.println("Enter password");
@@ -52,7 +54,7 @@ public class GpmUseCases {
 					gpm = gpmi.loginGPM(gpm);
 						if(gpm!=null) {
 						
-						System.out.println(yellowbg+"Wellcome BDO: "+gpm.getGpm_name()+reset+"\n");
+						System.out.println(green+"Wellcome BDO: "+gpm.getGpm_name()+reset+"\n");
 						gpmUseCases();
 						return;
 					}
@@ -72,7 +74,7 @@ public class GpmUseCases {
 	 
 	     public void gpmUseCases() {
 		
-	    	 	System.out.println("1. Create employee"+"\n"+"2. Display Employee details "+"\n"+"3. Assign projects to employee "+"\n"+"4. Display Working employee details"+"\n"+"5. Exit");
+	    	 	System.out.println("1. Create employee"+"\n"+"2. Display project assigned to gpm "+"\n"+"3. Assign projects to employee "+"\n"+"4. Display Working employee details"+"\n"+"5. Exit");
 				
 				System.out.println(cyan+"Enter the choise :"+reset);
 				
@@ -90,7 +92,7 @@ public class GpmUseCases {
 					break;
 					
 				case 2:
-					displayAllEmployee();
+					displayProjectAssiginedGPM();
 					gpmUseCases();
 					break;
 				case 3:
@@ -164,7 +166,7 @@ public class GpmUseCases {
 					int n = gpmi.createEmploye(emp);
 					
 					if(n>0) {
-				 		System.out.println(green+"GPM created.."+reset);
+				 		System.out.println(green+"1 Employee created.."+reset);
 				 		System.out.println();
 				 	}
 				} 	
@@ -182,7 +184,25 @@ public class GpmUseCases {
 		
 		
 		
-		public void displayAllEmployee() {
+		public void displayProjectAssiginedGPM() {
+			
+	
+				
+				try {
+					List<GpmDto> li = gpmi.displayProjectAssignedToGpm();
+				
+				
+				if(li.isEmpty()) {
+					 System.out.println(redbg+"Project Details not found!"+reset);
+				}
+				
+				else {
+					li.forEach(p -> System.out.println(whitebg+red+""+p+""+reset+"\n"));	
+				}
+				
+				} catch (ProjectException e1) {
+					System.out.println(e1.getMessage());
+				}
 			
 			
 		}
@@ -190,19 +210,84 @@ public class GpmUseCases {
 		
 		
 		public void assignProject() {
-			String name = null;
-			String email = null;
-			String password = null;
-			int salary = 0;
-			int total_working_days = 0;
-			System.out.println("Enter  salary");
-			salary=sc.nextInt();
-			System.out.println("Enter total_working_days");
-			total_working_days=sc.nextInt();
+			
+			int projectid = 0;
+			int employeeid = 0;
+			int salary=0;
+			int twd=0;
+			boolean flag=true;
+
+			try {
+		
+				System.out.println("Enter Project ID");
+				projectid=sc.nextInt();
+				System.out.println("Enter Employee ID");
+				employeeid=sc.nextInt();
+				System.out.println("Enter Employee wages");
+				salary=sc.nextInt();
+				System.out.println("Enter total working days");
+				twd=sc.nextInt();
+				
+			}
+			 catch (InputMismatchException e) {
+					
+				 System.out.println(redbg+""+"java.util.InputMismatchException"+reset);
+				 flag=false;
+				 sc.next();
+			}
+			if(flag) {
+				Employee emp=new Employee();
+				emp.setEmp_id(employeeid);
+				emp.setSalary(salary);
+				emp.setTotal_working_days(twd);
+				
+				Project p=new Project();
+				p.setProject_id(projectid);
+				
+				try {
+				int n =	gpmi.assignProjectToEmployee(p, emp);
+				
+				if(n>0) {
+					System.out.println(green+"1 Project is assigned to emplyee."+reset);
+			 		System.out.println();
+				}
+				} catch (EmployeeException e) {
+					 System.out.println(redbg+""+e.getMessage()+reset);
+						assignProject();
+				} catch (ProjectException e) {
+					 System.out.println(redbg+""+e.getMessage()+reset);
+						assignProject();
+				}	
+				
+			}
+			
+			else {
+				assignProject();
+			}
+		
+			
 		}
 		
 		
 		public void workingEmployees() {
+			
+			try {
+				List<EmployeeDto> li=gpmi.displayEmployeeDetails();
+				
+				if(li.isEmpty()) {
+					 System.out.println(redbg+"Employee Details not found!"+reset);
+				}
+				
+				else {
+					li.forEach(e -> System.out.println(whitebg+purple+""+e+""+reset+"\n"));	
+				}
+				
+				
+			} catch (EmployeeException e) {
+				 System.out.println(redbg+""+e.getMessage()+reset);
+			}
+			
+			
 			
 		}
 		
