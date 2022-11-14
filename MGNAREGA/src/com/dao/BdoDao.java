@@ -28,6 +28,8 @@ public interface BdoDao {
 	
 	public List<EmployeeDto> displayProjectEmployeDetails() throws EmployeeException;
 	
+	public int paySalary();
+	
 	
 	
 	

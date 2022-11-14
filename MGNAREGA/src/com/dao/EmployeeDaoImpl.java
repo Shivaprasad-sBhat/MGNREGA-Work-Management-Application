@@ -1,25 +1,66 @@
 package com.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import com.bean.Employee;
+import com.dbutil.DBUtil;
+import com.exception.EmployeeException;
 
 public class EmployeeDaoImpl implements EmployeeDao {
-
+	
+	Employee emp = new Employee();
+	
 	@Override
-	public String LoginEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		return null;
+	public Employee LoginEmployee(Employee employee) throws EmployeeException {
+	
+		try(Connection conn = DBUtil.provideConection()) {
+ 
+		PreparedStatement ps =	conn.prepareStatement("select * from employee where email=? and password=?");
+		
+		ResultSet rs = 	ps.executeQuery();
+		
+	
+		if(rs.next()) {
+			
+			int id = rs.getInt("emp_id");
+			String name = rs.getString("emp_name"); 
+			String email = rs.getString("email"); 
+			String password = rs.getString("password"); 
+			int salary = rs.getInt("salary");
+			int twd = rs.getInt("total_working_days");
+			
+			emp = new Employee(id, name, email, password, salary, twd);
+			
+			
+		}
+		else {
+			throw new EmployeeException("Employee details not found!");
+		}
+		
+		
+ 	}catch (SQLException e) {
+		System.out.println(e.getMessage());
+		
+	}
+		return emp;
+		
 	}
 
 	@Override
-	public String displayEmployeeDetails() {
-		// TODO Auto-generated method stub
-		return null;
+	public Employee displayEmployeeDetails() {
+		
+		return emp;
 	}
 
 	@Override
-	public int withdrwSalary(int amount) {
+	public int applyForWork() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
 }

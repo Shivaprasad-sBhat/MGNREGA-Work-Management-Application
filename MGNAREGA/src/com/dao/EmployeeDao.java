@@ -2,14 +2,15 @@
 package com.dao;
 
 import com.bean.Employee;
+import com.exception.EmployeeException;
 
 public interface EmployeeDao {
 
-	public String LoginEmployee(Employee employee);
+	public Employee LoginEmployee(Employee employee) throws EmployeeException;
 	
-	public String displayEmployeeDetails();
+	public Employee displayEmployeeDetails();
 	
-	public int withdrwSalary(int amount);
+	public int applyForWork();
 	
 	
 }

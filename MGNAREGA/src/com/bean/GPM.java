@@ -88,8 +88,8 @@ public void setPincode(int pincode) {
 
 @Override
 public String toString() {
-	return "GPM [gpm_id=" + gpm_id + ", gpm_name=" + gpm_name + ", email=" + email + ", password=" + password
-			+ ", address=" + address + ", pincode=" + pincode + "]";
+	return "GPM ID=" + gpm_id + ", Name=" + gpm_name + ", Email=" + email + ", Password=" + password
+			+ ", Address=" + address + ", Pincode=" + pincode ;
 }
 
 

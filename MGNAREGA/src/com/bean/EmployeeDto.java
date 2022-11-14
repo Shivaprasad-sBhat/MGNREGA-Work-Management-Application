@@ -86,9 +86,9 @@ public class EmployeeDto {
 
 	@Override
 	public String toString() {
-		return "EmployeeDto [emp_id=" + emp_id + ", name=" + name + ", email=" + email + ", project=" + project
-				+  ", salary=" + salary + ", total_working_days=" + total_working_days
-				+ ", total_salary=" + total_salary + "]";
+		return "Emp_id=" + emp_id + ", Name=" + name + ", Email=" + email + ", Project=" + project
+				+  ", Salary=" + salary + ", Total working days=" + total_working_days
+				+ ", Total salary=" + total_salary ;
 	}
 	
 	

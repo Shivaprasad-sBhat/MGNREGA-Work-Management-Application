@@ -273,4 +273,36 @@ public class BdoDaoImpl implements BdoDao {
 		
 			return li;
 		}
+
+
+
+	@Override
+	public int paySalary() {
+	
+			
+			int n=0;
+			
+			try(Connection conn = DBUtil.provideConection()) {
+				
+				PreparedStatement ps =	conn.prepareStatement("select emp_id,salary from employee");
+				
+				ResultSet  rs = ps.executeQuery();
+				
+				while(rs.next()) {
+					PreparedStatement ps1 =	conn.prepareStatement("update employee set salary=salary-salary,total_working_days=total_working_days-total_working_days where emp_id=?");
+					ps.setInt(1, rs.getInt("emp_id"));
+					n+=ps.executeUpdate();
+				}
+				 
+				
+				
+				
+		 	}catch (SQLException e) {
+				System.out.println(e.getMessage());
+				
+			}
+				return n;
+			
+		
+	}
 }

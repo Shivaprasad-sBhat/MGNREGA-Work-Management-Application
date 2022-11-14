@@ -53,8 +53,8 @@ public void setTotal_workers(int total_workers) {
 
 @Override
 public String toString() {
-	return "Project [project_id=" + project_id + ", project_name=" + p_name + ", project_amount=" + proj_amount
-			+ ", total_workers=" + total_workers + "]";
+	return "Project ID=" + project_id + ", Project=" + p_name + ", Project Amount=" + proj_amount
+			+ ", Total Workers=" + total_workers + "]";
 }
 
 

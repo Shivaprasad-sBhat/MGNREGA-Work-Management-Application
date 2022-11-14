@@ -124,9 +124,9 @@ public class GpmDto {
 
 	@Override
 	public String toString() {
-		return "[GPM_id=" + gpm_id + ", Name=" + gpm_name + ", Email=" + email + ", Address=" + address
+		return "GPM_id=" + gpm_id + ", Name=" + gpm_name + ", Email=" + email + ", Address=" + address
 				+ ", Pincode=" + pincode + ", Project_id=" + project_id + ", Project=" + p_name + ", Project Amount="
-				+ proj_amount + ", Total Working Days=" + total_workers + "]";
+				+ proj_amount + ", Total Working Days=" + total_workers ;
 	}
 	 
 	 

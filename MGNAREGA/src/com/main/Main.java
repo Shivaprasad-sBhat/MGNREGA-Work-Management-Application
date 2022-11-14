@@ -8,7 +8,7 @@ public class Main {
 	  final String	redbg = "\u001B[41m";
 	public static void main(String[] args) {
 	
-		System.out.println("Wellcome TO MGNAREGA management system");
+		System.out.println("Wellcome tO MGNAREGA work management system");
 		System.out.println("---------------------------------------");
 		System.out.println();
 		Main m=new Main();
