@@ -1,1 +1,27 @@
-# fresh-dinosaurs-7507
+> MGNREGA(The Mahatma Gandhi National Rural Employment Guarantee Act ) is a scheme by which unskilled people of rural India are guaranteed to have 100 days of paid work. Main objective of this project is to manage employments offered through this scheme. There are two users of this system 
+> 
+> a. BDO (Block Development Officer) 
+>
+> b. Gram Panchayat member
+> 
+> A project is created by BDO. Project is where people are assigned to. Before assigning anybody to a project(done by Gram Panchayat member) his/her data must be inserted into the system.
+
+# Gram MGNREGA : Rural Employement Gurantee Act.
+
+> The Gram MGNREGA is an java application designed to provide BDO and Gram Panchayat Member (GPM) of Block Office with a personalized easy-to-utilize user experience for creating, assigning and managing the project and employee . It stores GPM, Employee and project's data records, project assignments, wage/day, Total receivable amount till current date , and other information.
+>
+>It is Console based Project.
+>
+
+# Features 
+
+- BDO and GPM can login and logout. (Maximum 3 attempts allowed).
+- BDO can create Project and GPM and provide their detail.
+- BDO can see the List of Project, GPM amd Employee's along with all the detail.
+- BDO can assign project to GPM amd GPM can assign to Employee.
+- GPM can see the list of Employee and Amount receivable till date according to daily wage.
+- GPM can only assingn only those project which are assign to them by BDO.
+- GPM can only assingn project to only thode employee which are created by them.
+- Many more .. 
+
+
