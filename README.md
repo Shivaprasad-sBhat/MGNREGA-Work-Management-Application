@@ -9,10 +9,10 @@
 
 # Features 
 
-- BDO and GPM can login and logout. (Maximum 3 attempts allowed).
-- BDO can create Project and GPM and provide their detail.
-- BDO can see the List of Project, GPM amd Employee's along with all the detail.
-- BDO can assign project to GPM amd GPM can assign to Employee.
+- BDO and GPM can login and logout. 
+- BDO can create Project and GPM.
+- BDO can see the List of Project, GPM and Employee's along with all the detail.
+- BDO can assign project to GPM and GPM can assign to Employee.
 - GPM can see the list of Employee and Amount receivable till date according to daily wage.
 - GPM can only assingn only those project which are assign to them by BDO.
 - GPM can only assingn project to only thode employee which are created by them.
