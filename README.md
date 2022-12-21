@@ -20,4 +20,13 @@
 - GPM can only assingn project to only thode employee which are created by them.
 - Many more .. 
 
+# Tech Stacks
+
+-Java
+-MySQL
+-JDBC-Driver
+
+
+
+
 
