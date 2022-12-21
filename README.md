@@ -22,12 +22,14 @@
 
 # Tech Stacks
 
- > Java
- > MySQL
+ > Java </br>
+ > MySQL </br> 
  > JDBC-Driver
 
 
-# Project Overview
+# Project Overview 
+
+<h4>ER-Diagram</h4>
 
 <img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/ER%20-Diagram.png"> </img>
 
