@@ -1,6 +1,6 @@
 # The Mahatma Gandhi National Rural Employment Guarantee Act
 
-<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/src/com/assets/mgnrega-logo.webp"></img>
+<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/mgnrega-logo.webp"></img>
 > MGNREGA is a scheme by which unskilled people of rural India are guaranteed to have 100 days of paid work. Main objective of this project is to manage employments offered through this scheme. There are two users of this system 
 > 
 > a. BDO (Block Development Officer) 
@@ -31,7 +31,7 @@
 
 # Project Overview
 
-<img> </img>
+<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/ER%20-Diagram.png"> </img>
 
 
 
