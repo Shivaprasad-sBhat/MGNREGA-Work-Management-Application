@@ -29,9 +29,15 @@
 
 # Project Overview 
 
-<h4>ER-Diagram</h4>
+<h3>ER-Diagram</h3>
 
 <img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/ER%20-Diagram.png"> </img>
+
+<h4>Admin Login</h4>
+<img></img>
+
+<h4></h4>
+<img></img>
 
 
 
