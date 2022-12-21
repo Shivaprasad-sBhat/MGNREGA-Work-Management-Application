@@ -22,11 +22,9 @@
 
 # Tech Stacks
 
--Java
-
--MySQL
-
--JDBC-Driver
+ > Java
+ > MySQL
+ > JDBC-Driver
 
 
 # Project Overview
