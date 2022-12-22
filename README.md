@@ -40,7 +40,7 @@
 
 
 <h4>GPM Login </h4>
-<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/create%20gpm.PNG"></img>
+<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/gpm-home.PNG"></img>
 
 
 
