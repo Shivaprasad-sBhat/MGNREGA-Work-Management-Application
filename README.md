@@ -35,7 +35,7 @@
 <h4>Admin Login</h4>
 <img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/exeption%20handling.PNG"></img>
 
-<h4>Creating a GPM </h>
+<h4>Creating a GPM </h4>
 <img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/create%20gpm.PNG"></img>
 
 
