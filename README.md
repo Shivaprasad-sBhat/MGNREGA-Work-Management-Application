@@ -18,7 +18,6 @@
 - GPM can see the list of Employee and Amount receivable till date according to daily wage.
 - GPM can only assingn only those project which are assign to them by BDO.
 - GPM can only assingn project to only thode employee which are created by them.
-- Many more .. 
 
 # Tech Stacks
 
@@ -34,10 +33,14 @@
 <img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/ER%20-Diagram.png"> </img>
 
 <h4>Admin Login</h4>
-<img></img>
+<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/exeption%20handling.PNG"></img>
+</br>
+<h4>Creating a GPM </h>
+<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/create%20gpm.PNG"></img>
 
-<h4></h4>
-<img></img>
+</br>
+<h4>GPM Login </h4>
+<img src="https://github.com/Shivaprasad-sBhat/MGNREGA-Work-Management-Application/blob/main/MGNAREGA/assets/create%20gpm.PNG"></img>
 
 
 
