@@ -1,22 +1,18 @@
-package com.main;
+package com.usecase;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import com.bean.BDO;
-import com.bean.Employee;
-import com.bean.EmployeeDto;
-import com.bean.GPM;
-import com.bean.GpmDto;
-import com.bean.Project;
-import com.dao.EmployeeDaoImpl;
 import com.dao.GpmDaoImpl;
-import com.exception.BdoException;
 import com.exception.EmployeeException;
 import com.exception.GpmException;
 import com.exception.ProjectException;
+import com.model.Employee;
+import com.model.EmployeeDto;
+import com.model.GPM;
+import com.model.GpmDto;
+import com.model.Project;
 
 public class GpmUseCases {
 	

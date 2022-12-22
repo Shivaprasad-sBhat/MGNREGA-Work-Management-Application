@@ -7,15 +7,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bean.Employee;
-import com.bean.EmployeeDto;
-import com.bean.GPM;
-import com.bean.GpmDto;
-import com.bean.Project;
 import com.dbutil.DBUtil;
 import com.exception.EmployeeException;
 import com.exception.GpmException;
 import com.exception.ProjectException;
+import com.model.Employee;
+import com.model.EmployeeDto;
+import com.model.GPM;
+import com.model.GpmDto;
+import com.model.Project;
 
 public class GpmDaoImpl implements GpmDao {
 

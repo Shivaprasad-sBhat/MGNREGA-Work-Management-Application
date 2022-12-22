@@ -1,8 +1,8 @@
 
 package com.dao;
 
-import com.bean.Employee;
 import com.exception.EmployeeException;
+import com.model.Employee;
 
 public interface EmployeeDao {
 

@@ -1,18 +1,18 @@
-package com.main;
+package com.usecase;
 
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import com.bean.BDO;
-import com.bean.EmployeeDto;
-import com.bean.GPM;
-import com.bean.Project;
 import com.dao.BdoDaoImpl;
 import com.exception.BdoException;
 import com.exception.EmployeeException;
 import com.exception.GpmException;
 import com.exception.ProjectException;
+import com.model.BDO;
+import com.model.EmployeeDto;
+import com.model.GPM;
+import com.model.Project;
 
 
 

@@ -1,4 +1,4 @@
-package com.bean;
+package com.model;
 
 public class GpmDto {
 	 private int gpm_id;             

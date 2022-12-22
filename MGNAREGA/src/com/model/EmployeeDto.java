@@ -1,4 +1,4 @@
-package com.bean;
+package com.model;
 
 public class EmployeeDto {
 	

@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.bean.Employee;
 import com.dbutil.DBUtil;
 import com.exception.EmployeeException;
+import com.model.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 	

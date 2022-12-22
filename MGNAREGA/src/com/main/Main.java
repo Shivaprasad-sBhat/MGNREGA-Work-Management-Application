@@ -3,6 +3,9 @@ package com.main;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.usecase.BdoUseCases;
+import com.usecase.GpmUseCases;
+
 public class Main {
 	  final String reset = "\u001B[0m";
 	  final String	redbg = "\u001B[41m";
